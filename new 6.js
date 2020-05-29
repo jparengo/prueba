@@ -75,15 +75,17 @@ function activacion(i){
 }
 
 
-var arrayobjetosOcultos = encontrarObjetosDisplay();
-var arrayobjetosSinnull = limpiarNull(arrayobjetosOcultos);
-crearBotones();
 
-      // Don't use window.onLoad like this in production, because it can only listen to one function.
+
+
       window.onload = function() {
         svgPanZoom('#archivo-svg', {
           zoomEnabled: true
         });
+          
+          var arrayobjetosOcultos = encontrarObjetosDisplay();
+          var arrayobjetosSinnull = limpiarNull(arrayobjetosOcultos);
+          crearBotones();
       };
  
 
