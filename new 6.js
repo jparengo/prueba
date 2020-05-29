@@ -80,10 +80,10 @@ var arrayobjetosSinnull = limpiarNull(arrayobjetosOcultos);
 crearBotones();
 
 
-  //    window.onload = function() {
-    //    svgPanZoom('#archivo-svg', {
-      //    zoomEnabled: true
-     //   });
-     // };
+      window.onload = function() {
+        svgPanZoom('#archivo-svg', {
+         zoomEnabled: true
+        });
+      };
  
 
