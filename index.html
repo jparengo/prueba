@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>New 6</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>AMERICAS</title>
 <style>
   /* The sidepanel menu */
 .sidepanel {
@@ -60,31 +61,30 @@
 <link href="bootstrap-3.3.7.min.css" rel="stylesheet" />
 <link href="bootstrap-switch-3.3.4.min.css" rel="stylesheet" />
 
-
 </head>
 <body>
   <!-- Side navigation -->
   <button class="openbtn" onclick="openNav()">&#9776;</button>
   <div id="mySidepanel" class="sidepanel">
     <div class="panel-group">
-      <div class="panel panel-primary">
+      <div class="panel panel-default">
        <div class="panel-heading">
          <div class="panel-title">
-          <h2 data-toggle="collapse" href="#enlaces">LINKS</h2>            
+          <h3 data-toggle="collapse" href="#enlaces">LINKS</h3>            
          </div>
         </div>
         <div  class="closebtn" onclick="closeNav()">×</div>
         <div id="enlaces" class="list-group collapse">
-          <a href="new 7.html" class="list-group-item text-center"><h2>NORAM</h2></a>
-          <a href="new 8.html" class="list-group-item text-center"><h2>NORLA</h2></a>
-          <a href="new 9.html" class="list-group-item text-center"><h2>BRAZIL</h2></a>
-          <a href="new 5.html" class="list-group-item text-center"><h2>SCONE</h2></a>
+          <a href="noram.html" class="list-group-item text-center"><h3>NORAM</h3></a>
+          <a href="norla.html" class="list-group-item text-center"><h3>NORLA</h3></a>
+          <a href="brazil.html" class="list-group-item text-center"><h3>BRAZIL</h3></a>
+          <a href="scone.html" class="list-group-item text-center"><h3>SCONE</h3></a>
         </div>
       </div>  
-      <div class="panel panel-primary">
+      <div class="panel panel-default">
         <div class="panel-heading">
          <div class="panel-title">
-            <h2 data-toggle="collapse" href="#capas">LAYERS</h2>
+            <h3 data-toggle="collapse" href="#capas">LAYERS</h3>
          </div>
         </div>
         <ul class="list-group collapse" id="capas">
@@ -92,7 +92,7 @@
       </div>
     </div>
   </div>
-  <div class="main embed-responsive embed-responsive-16by9" style="margin-left:375px">
+  <div class="main embed-responsive embed-responsive-16by9">
     <object id="archivo-svg" type="image/svg+xml" class="img-responsive" data="./Diagrama_AMERICAS.svg" ></object>
   </div>	
 
@@ -100,16 +100,6 @@
   <script src="bootstrap-3.3.7.min.js"></script>
   <script src="bootstrap-switch-3.3.4.min.js"></script>
   <script src="zoom.js"></script>
-  <script src="new 6.js"></script>
-  <script>/* Set the width of the sidebar to 250px (show it) */
-    function openNav() {
-      document.getElementById("mySidepanel").style.width = "250px";
-      document.getElementById("mySidepanel").style.height = "100%";
-    }
-    
-    /* Set the width of the sidebar to 0 (hide it) */
-    function closeNav() {
-      document.getElementById("mySidepanel").style.width = "0";
-    }</script>
+  <script src="funciones.js"></script>
 </body>
 </html>
