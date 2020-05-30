@@ -12,9 +12,9 @@ function encontrarObjetosDisplay(){
       }
     }
     return arraSalida;
-}
+  }
   
-function limpiarNull(arraEntrada){
+  function limpiarNull(arraEntrada){
       var arraSalida = new Array();
     var j = 0;
     for(i=0; i< arraEntrada.length; i++){
@@ -24,9 +24,9 @@ function limpiarNull(arraEntrada){
       }
     }
     return arraSalida;
-}
+  }
   
-function crearBoton(Entrada,i){
+  function crearBoton(Entrada,i){
     var botona = document.createElement("input");
       botona.setAttribute("type","checkbox");
       botona.setAttribute("name","my-checkbox");
@@ -41,26 +41,25 @@ function crearBoton(Entrada,i){
       fila.setAttribute("class","list-group-item text-center");
     var panel = document.getElementById("capas");
       panel.appendChild(fila);
-}
+  }
   
-function iniciarBoton(Entrada){
+  function iniciarBoton(Entrada,arrayobjetosSinnull){
     $('#btn'+Entrada).bootstrapSwitch();
-    activacion(Entrada);
-}
+    activacion(Entrada,arrayobjetosSinnull);
+  }
 
-function crearBotones(){
+  function crearBotones(arrayobjetosSinnull){
     var elementosV = document.getElementById("archivo-svg").contentDocument.getElementsByTagName("v:layer");
     for(i=0; i<elementosV.length;i++){
         if(elementosV[i].getAttribute("v:name") != "default" ){
            if(elementosV[i].getAttribute("v:name") != null){
             crearBoton(elementosV[i].getAttribute("v:name"),elementosV[i].getAttribute("v:index"));
-            iniciarBoton(elementosV[i].getAttribute("v:index"));
+            iniciarBoton(elementosV[i].getAttribute("v:index"),arrayobjetosSinnull);
            }
         }
     }
-}
-
-function activacion(i){
+  }
+function activacion(i,arrayobjetosSinnull){
   $('#btn'+i).on('switchChange.bootstrapSwitch',function (e,data) {
     for(a=0;a<arrayobjetosSinnull.length;a++){
                 if(arrayobjetosSinnull[a].getAttribute("v:layerMember")== i){
@@ -75,12 +74,23 @@ function activacion(i){
     });
 }
 
-var arrayobjetosOcultos = encontrarObjetosDisplay();
-var arrayobjetosSinnull = limpiarNull(arrayobjetosOcultos);
-crearBotones();
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "20%";
+    document.getElementById("mySidepanel").style.height = "100%";
+}
 
-window.onload = function() {
-    svgPanZoom('#archivo-svg', {
-        zoomEnabled: true
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+}
+
+
+
+
+$( window ).on( "load", function() { 
+  svgPanZoom('#archivo-svg', {
+    zoomEnabled: true
     });
-};
+    var arrayobjetosOcultos = encontrarObjetosDisplay();
+    var arrayobjetosSinnull = limpiarNull(arrayobjetosOcultos);
+    crearBotones(arrayobjetosSinnull);
+ });
